@@ -235,29 +235,29 @@ const handleReturnToMain = (Name:any) => {
                (<div>
                     <div className="DMSMasterContainer">
                 <h4 className="page-title fw-bold mb-1 font-20">My Approvals 1</h4>
-                <div className="container" style={{ backgroundColor: 'white', padding: '12px'}}>
-                <table className="Approval-table">
-    <thead className="Approval-table-header">
+                <div className="" style={{ backgroundColor: 'white', border:'1px solid #54ade0', marginTop:'20px', borderRadius:'20px', padding: '15px'}}>
+                <table className="mtbalenew">
+    <thead>
       <tr>
         <th
           style={{
             minWidth: '40px',
             maxWidth: '40px',
-            borderBottomLeftRadius: '10px',
+         
           }}
         >
           S.No
         </th>
-        <th style={{ minWidth: '80px', maxWidth: '80px' }}>Request ID</th>
-        <th style={{ minWidth: '120px', maxWidth: '120px' }}>Process Name</th>
-        <th style={{ minWidth: '100px', maxWidth: '100px' }}>Requested By</th>
-        <th style={{ minWidth: '100px', maxWidth: '100px' }}>Requested Date</th>
+        <th>Request ID</th>
+        <th>Process Name</th>
+        <th>Requested By</th>
+        <th >Requested Date</th>
         <th style={{ minWidth: '80px', maxWidth: '80px' }}>Status</th>
         <th
           style={{
             minWidth: '70px',
             maxWidth: '70px',
-            borderBottomRightRadius: '10px',
+         
           }}
         >
           Action
@@ -269,25 +269,27 @@ const handleReturnToMain = (Name:any) => {
       {Mylistdata.length > 0  ? Mylistdata.map((item, index) => {
       return(
         <tr>
-<td style={{ minWidth: '40px', maxWidth: '40px' }}>{index}</td>
-<td className="text-dark ng-binding" style={{ minWidth: '80px', maxWidth: '80px' }}>{(truncateText(item.FileUID.FileUID, 10))}</td>
-<td style={{ minWidth: '120px', maxWidth: '120px' }}>Capex Form</td>
-<td style={{ minWidth: '100px', maxWidth: '100px' }}>{(truncateText(item.FileUID.RequestedBy, 10))}</td> 
-<td style={{ minWidth: '100px', maxWidth: '100px' }}>
+<td style={{ minWidth: '40px', maxWidth: '40px'}}>
+  <span style={{marginLeft:'5px'}} className="indexdesign">{index}</span>
+  </td>
+<td >{(truncateText(item.FileUID.FileUID, 22))}</td>
+<td >Capex Form</td>
+<td >{(truncateText(item.FileUID.RequestedBy, 22))}</td> 
+<td >
 <div
   style={{
-    padding: '5px 15px',
+    padding: '5px',
     border: '1px solid #efefef',
-    background: '#fff',
+    background: '#fff', fontSize:'14px',
     borderRadius: '30px',
-    width: '186px'
+  
   }}
   className="btn btn-light"
 >
  {item.FileUID.Created}
 </div>
 </td>
-<td style={{ minWidth: '80px', maxWidth: '80px' }}>
+<td style={{ minWidth: '80px', maxWidth: '80px', textAlign:'center' }}>
 <div className="finish mb-0">Pending</div>
 </td>
 <td style={{ minWidth: '70px', maxWidth: '70px' }}>
@@ -315,7 +317,7 @@ const handleReturnToMain = (Name:any) => {
                 <div>
                   {activeComponent === 'Approval Action' && (
                     <div>
-                   <button onClick={()=>handleReturnToMain('')}> Back </button>
+                   <button style={{float:'right'}} type="button" className="btn btn-secondary" onClick={()=>handleReturnToMain('')}> Back </button>
                   <DMSMyApprovalAction props={currentItemID}/>
                     </div>
                

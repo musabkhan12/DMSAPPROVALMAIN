@@ -644,9 +644,9 @@ try {
  
   return (
    
-          <div className="container-fluid  paddb">
+          <div>
             {activeComponent === "" ? (
-              <div>
+              <div style={{float:'left', width:'100%', clear:'both'}}>
                 <div>
                   <div className="content">
                 
@@ -657,31 +657,31 @@ try {
                         <div>
                           <div className="DMSMasterContainer">
                               {/* <h4 className="page-title fw-bold mb-1 font-20">Settings</h4> */}
-                              <div className="container" style={{ backgroundColor: 'white', padding: '12px'}}>
-                                  <table className="Approval-table">
-                                    <thead className="Approval-table-header">
+                              <div className="" style={{ backgroundColor: 'white', border:'1px solid #54ade0', marginTop:'20px', borderRadius:'20px', padding: '15px'}}>
+                                  <table className="mtbalenew">
+                                    <thead >
                                       <tr>
                                         <th
                                           style={{
                                           minWidth: '40px',
                                           maxWidth: '40px',
-                                          borderBottomLeftRadius: '10px',
+                                         
                                           }}
                                         >
                                              S.No
                                         </th>
-                                        <th style={{ minWidth: '80px', maxWidth: '80px' }}>Request ID</th>
+                                        <th>Request ID</th>
                                         {/* <th style={{ minWidth: '120px', maxWidth: '120px' }}>Process Name</th> */}
-                                        <th style={{ minWidth: '80px', maxWidth: '80px' }}>Log</th>
-                                        <th style={{ minWidth: '80px', maxWidth: '80px' }}>Log History</th>
-                                        <th style={{ minWidth: '100px', maxWidth: '100px' }}>Requested By</th>
-                                        <th style={{ minWidth: '100px', maxWidth: '100px' }}>Requested Date</th>
+                                        <th >Log</th>
+                                        <th>Log History</th>
+                                        <th>Requested By</th>
+                                        <th style={{ minWidth: '150px', maxWidth: '150px' }}>Requested Date</th>
                                         <th style={{ minWidth: '80px', maxWidth: '80px' }}>Status</th>
                                         <th
                                           style={{
                                           minWidth: '70px',
                                           maxWidth: '70px',
-                                          borderBottomRightRadius: '10px',
+                                         
                                           }}
                                           >
                                             Remark
@@ -693,36 +693,38 @@ try {
                                             {Mylistdata.length > 0  ? Mylistdata.map((item, index) => {
                                             return(
                                                   <tr>
-                                                    <td style={{ minWidth: '40px', maxWidth: '40px' }}>{index}</td>
-                                                    <td className="text-dark ng-binding" style={{ minWidth: '80px', maxWidth: '80px' }}>{(truncateText(item.FileUID.RequestNo, 10))}
+                                                    <td style={{ minWidth: '40px', maxWidth: '40px' }}>
+                                                      <span style={{marginLeft:'0px'}} className="indexdesign">
+                                                      {index}</span></td>
+                                                    <td>{(truncateText(item.FileUID.RequestNo, 20))}
                                                     </td>
-                                                    <td style={{ minWidth: '80px', maxWidth: '80px' }}>{
+                                                    <td >{
                                                       item.Log
                                                       }</td>
-                                                      <td style={{ minWidth: '100px', maxWidth: '100px' }}>
+                                                      <td>
                                                         
                                                      
                                                            {item.LogHistory}
 
                                                        </td>
-                                                    <td style={{ minWidth: '100px', maxWidth: '100px' }}>{(truncateText(item.FileUID.RequestedBy, 10))}</td> 
-                                                    <td style={{ minWidth: '100px', maxWidth: '100px' }}>
+                                                    <td >{(truncateText(item.FileUID.RequestedBy, 25))}</td> 
+                                                    <td style={{ minWidth: '150px', maxWidth: '150px' }}>
                                                         <div
                                                           style={{
-                                                            padding: '5px 15px',
+                                                            padding: '5px',
                                                             border: '1px solid #efefef',
                                                             background: '#fff',
-                                                            borderRadius: '30px',
-                                                            width: '186px'
+                                                            borderRadius: '30px',fontSize:'14px',
+                                                          
                                                           }}
                                                           className="btn btn-light"
                                                         >
                                                           {item.FileUID.Created}
                                                         </div>
                                                     </td>
-                                                    <td style={{ minWidth: '80px', maxWidth: '80px' }}>
+                                                    <td style={{ minWidth: '80px', maxWidth: '80px', textAlign:'center' }}>
                                                         {/* <div className="finish mb-0"></div> */}
-                                                        {item.FileUID.Status}
+                                                        <div className="finish mb-0">  {item.FileUID.Status} </div>
                                                         </td>
                                                     {/* <td style={{ minWidth: '70px', maxWidth: '70px' }}>
                                                           <a onClick={(e )=>getTaskItemsbyID(e , item.FileUID.FileUID)}>
@@ -745,10 +747,10 @@ try {
 
                         
                   {toggleLog && (
-                    <div className="container" style={{ backgroundColor: 'white', padding: '12px'}}>
+                                <div className="" style={{ backgroundColor: 'white', border:'1px solid #54ade0', marginTop:'20px', borderRadius:'20px', padding: '15px'}}>
  <iframe id="filePreview" width="100%" height="400"></iframe>
-                         <div className="card cardbottom">
-                          <div className="card-body">
+                         <div className="">
+                          <div className="">
                           
                             <div className="row">
                          
@@ -758,7 +760,7 @@ try {
                                     Remarks:
                                   </label>
                                   <input
-                                   type="text"
+                                   type="text" style={{height:'70px'}}  className="form-control"
                                    onChange={handleRemark}
                                   //  value={remark}
                                     />
